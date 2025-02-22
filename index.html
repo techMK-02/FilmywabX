@@ -2,67 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="assets/logo.svg" type="image/x-icon" />
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <title>Techify Bots</title>
-    <style>
-        /* Add styles for the loading spinner */
-        .spinner {
-            border: 4px solid #f3f3f3; /* Light grey */
-            border-top: 4px solid #3498db; /* Blue */
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .loading-container {
-            display: none;
-            text-align: center;
-            margin: 20px 0;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <!-- QR Section -->
         <div class="qr-container">
-            <div class="loading-container">
-                <div class="spinner"></div>
-                <p>Loading...</p>
-            </div>
-            <div class="qr-code"> 
-                <img id="qr-image" src="assets/qr-code.png" alt="UPI QR Code">
-            </div>
-            <div class="payment-info">
-                <p id="qr-text">Scan the QR code or use the UPI ID:</p>
-                <div class="upi-id-content">
-                    <strong id="payment-id">TechifyBots@UPI</strong>
-                    <button id="payment-button" class="copy-button">Copy</button>
-                    <lottie-player 
-                        id="upi-animation"
-                        src="https://lottie.host/2b51d7af-7099-49f5-93df-f8190dde11bb/WU9eejAueC.json"
-                        background="#FFFFFF"
-                        speed="1.5"
-                        loop
-                        autoplay
-                        direction="1"
-                        mode="normal" 
-                        class="upi-icon"
-                    ></lottie-player>
-                </div>
-            </div>
-            <!-- Toggle between UPI and PayPal -->
-            <a id="toggle-link" href="#" class="toggle-payment">Donate via PayPal? Click Here</a>
+            <p>Loading...</p>
         </div>
+        <div class="qr-code"> 
+            <img id="qr-image" src="https://i.ibb.co/JFjSYJTy/photo-2025-02-22-09-43-14-7474176881059692560.jpg" alt="UPI QR Code">
+            <a id="download-link" href="https://i.ibb.co/JFjSYJTy/photo-2025-02-22-09-43-14-7474176881059692560.jpg" download>
+                <img src="assets/download-icon.png" class="download-icon" alt="Download Icon">
+            </a>
+        </div>
+        <div class="payment-info">
+            <p id="qr-text">Scan the QR code or use the UPI ID:</p>
+            <div class="upi-id-content">
+                <strong id="payment-id">TechifyBots@UPI</strong>
+                <button id="payment-button" class="copy-button">Copy</button>
+                <lottie-player 
+                    id="upi-animation"
+                    src="https://lottie.host/2b51d7af-7099-49f5-93df-f8190dde11bb/WU9eejAueC.json"
+                    background="#FFFFFF"
+                    speed="1.5"
+                    loop
+                    autoplay
+                    direction="1"
+                    mode="normal" 
+                    class="upi-icon"
+                ></lottie-player>
+            </div>
+        </div>
+        <!-- Toggle between UPI and PayPal -->
+        <a id="toggle-link" href="#" class="toggle-payment">Donate via PayPal? Click Here</a>
     </div>
 
     <script>
@@ -74,72 +48,64 @@
             const upiAnimation = document.getElementById("upi-animation");
             const qrText = document.getElementById("qr-text");
             const loadingContainer = document.querySelector(".loading-container");
+            const downloadLink = document.getElementById("download-link");
 
             let isUpi = true;
 
-            // Function to switch to PayPal
             function switchToPayPal() {
-                loadingContainer.style.display = "block"; // Show loading spinner
-                qrImage.style.display = "none"; // Hide QR image
+                loadingContainer.style.display = "block";
+                qrImage.style.display = "none";
 
                 qrImage.onload = function() {
-                    loadingContainer.style.display = "none"; // Hide loading spinner
-                    qrImage.style.display = "block"; // Show QR image
+                    loadingContainer.style.display = "none";
+                    qrImage.style.display = "block";
                 };
 
-                qrImage.src = "assets/paypal_qr.png"; // Replace with your PayPal QR code image
-                paymentId.textContent = "TechifyBots"; // Replace with your PayPal ID
+                qrImage.src = "https://i.ibb.co/VYfqzmTy/photo-2025-02-22-09-43-38-7474176919714398224.jpg";
+                paymentId.textContent = "TechifyBots";
                 paymentButton.textContent = "Open PayPal";
                 paymentButton.removeEventListener("click", copyUpiId);
                 paymentButton.addEventListener("click", openPayPalLink);
                 toggleLink.textContent = "Donate via UPI? Click Here";
                 upiAnimation.style.display = "none";
                 qrText.textContent = "Scan with any QR scanning app or use the button";
+                downloadLink.href = "https://i.ibb.co/VYfqzmTy/photo-2025-02-22-09-43-38-7474176919714398224.jpg"; // Update download link to PayPal QR code
                 isUpi = false;
             }
 
-            // Function to switch to UPI
             function switchToUpi() {
-                qrImage.style.display = "none"; // Hide QR image
-                loadingContainer.style.display = "none"; // Hide loading spinner
+                qrImage.style.display = "none";
+                loadingContainer.style.display = "none";
 
                 qrImage.onload = function() {
-                    qrImage.style.display = "block"; // Show QR image
+                    qrImage.style.display = "block";
                 };
 
-                qrImage.src = "assets/qr-code.png"; // Replace with your UPI QR code image
-                paymentId.textContent = "TechifyBots@UPI"; // Replace with your UPI ID
+                qrImage.src = "https://i.ibb.co/JFjSYJTy/photo-2025-02-22-09-43-14-7474176881059692560.jpg";
+                paymentId.textContent = "TechifyBots@UPI";
                 paymentButton.textContent = "Copy";
                 paymentButton.removeEventListener("click", openPayPalLink);
                 paymentButton.addEventListener("click", copyUpiId);
                 toggleLink.textContent = "Donate via PayPal? Click Here";
                 upiAnimation.style.display = "block";
                 qrText.textContent = "Scan the QR code or use the UPI ID:";
+                downloadLink.href = "https://i.ibb.co/JFjSYJTy/photo-2025-02-22-09-43-14-7474176881059692560.jpg"; // Update download link to UPI QR code
                 isUpi = true;
             }
 
-            // Function to copy UPI ID
             function copyUpiId() {
-                const tempInput = document.createElement("input");
-                tempInput.value = paymentId.textContent;
-                document.body.appendChild(tempInput);
-                tempInput.select();
-                document.execCommand("copy");
-                document.body.removeChild(tempInput);
-                paymentButton.textContent = "Copied!";
-                setTimeout(function () {
-                    paymentButton.textContent = "Copy";
-                }, 2500);
+                const upiId = paymentId.textContent;
+                navigator.clipboard.writeText(upiId).then(() => {
+                    alert('UPI ID copied to clipboard!');
+                });
             }
 
-            // Function to open PayPal link
             function openPayPalLink() {
-                window.open("https://www.paypal.me/TechifyBots", "_blank");
+                window.open('https://www.paypal.com/paypalme/TechifyBots', '_blank');
             }
 
-            // Toggle between UPI and PayPal when the link is clicked
-            toggleLink.addEventListener("click", function (e) {
-                e.preventDefault();
+            toggleLink.addEventListener("click", function (event) {
+                event.preventDefault();
                 if (isUpi) {
                     switchToPayPal();
                 } else {
@@ -147,18 +113,8 @@
                 }
             });
 
-            // Add the copy functionality for UPI by default
             paymentButton.addEventListener("click", copyUpiId);
-
-            document.addEventListener("contextmenu", function (event) {
-                event.preventDefault();
-            });
         });
-
-        (function() {
-            const message = String.fromCharCode(77, 97, 100, 101, 32, 119, 105, 116, 104, 32, 128149, 32, 98, 121, 32, 73, 110, 117, 108, 117, 116, 101);
-            console.log(message);
-        })();
     </script>
 </body>
 </html>
