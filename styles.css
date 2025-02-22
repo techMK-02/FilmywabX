@@ -7,14 +7,12 @@ body {
     background-image: url("/assets/background.svg"); 
 }
 
-
-
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: auto;
+    height: 100vh; /* Update to take full viewport height */
 }
 
 .qr-container {
@@ -29,7 +27,6 @@ body {
     margin-bottom: 20px;
     max-width: 350px;
     margin: 5%;
-    
 }
 
 .qr-code img {
