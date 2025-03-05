@@ -132,9 +132,9 @@
                 tempInput.select();
                 document.execCommand("copy");
                 document.body.removeChild(tempInput);
-                paymentButton.textContent = "Copied!";
+                paymentButton.classList.add("copied");
                 setTimeout(function () {
-                    paymentButton.textContent = "Copy";
+                    paymentButton.classList.remove("copied");
                 }, 2500);
             }
 
