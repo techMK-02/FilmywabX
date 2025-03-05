@@ -37,8 +37,8 @@
 
         .download-icon {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: -10px; /* Adjust the top position to prevent hiding the QR code */
+            right: -10px; /* Adjust the right position to prevent hiding the QR code */
             font-size: 24px;
             color: #007bff;
             cursor: pointer;
@@ -60,10 +60,10 @@
                 <p>Loading...</p>
             </div>
             <div class="qr-code"> 
-                <a href="https://envs.sh/FoD.jpg" download="upi-qr-code.jpg" id="upi-download-icon" class="download-icon">
+                <a href="assets/qr-code.png" download="upi-qr-code.png" id="upi-download-icon" class="download-icon">
                     <i class="fas fa-download"></i>
                 </a>
-                <a href="https://envs.sh/FD.jpg" download="paypal-qr-code.jpg" id="paypal-download-icon" class="download-icon" style="display: none;">
+                <a href="assets/paypal_qr.png" download="paypal-qr-code.png" id="paypal-download-icon" class="download-icon" style="display: none;">
                     <i class="fas fa-download"></i>
                 </a>
                 <img id="qr-image" src="assets/qr-code.png" alt="UPI QR Code">
