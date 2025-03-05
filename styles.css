@@ -91,6 +91,27 @@ body {
     text-decoration: underline;
 }
 
+.copy-icon, .download-icon {
+    font-size: 24px;
+    color: #007bff;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.copy-icon:hover, .download-icon:hover {
+    color: #0056b3;
+    transform: scale(1.2);
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
 #watermark::after {
     content: "Made by Rahul";
     position: fixed;
