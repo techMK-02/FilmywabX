@@ -95,25 +95,26 @@ body {
 
 .download-icon {
     position: absolute;
-    top: -25px; /* Moves the icon further up */
-    right: -25px; /* Moves the icon further to the right */
-    font-size: 22px; /* Slightly smaller size */
-    color: rgba(0, 123, 255, 0.8); /* Softer blue with some transparency */
+    top: -15px; /* Adjusted to avoid covering the QR */
+    right: -15px; /* Adjusted to avoid overlapping */
+    font-size: 20px; /* Adjust size */
+    color: #007bff; /* Visible and appealing color */
     cursor: pointer;
-    background: white; /* White background to make it stand out */
-    padding: 5px; /* Adds spacing around the icon */
-    border-radius: 50%; /* Circular shape */
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Soft shadow for better visibility */
-    transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+    background: white; /* Ensures it stands out */
+    padding: 6px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease, transform 0.3s ease;
+    z-index: 10; /* Ensures it stays above */
 }
 
 .download-icon:hover {
-    color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.1); /* Slightly enlarges on hover */
+    color: #0056b3;
+    transform: scale(1.1);
 }
 
 .download-icon:active {
-    transform: scale(0.95); /* Shrinks slightly when clicked */
+    transform: scale(0.95);
 }
 
 #watermark::after {
