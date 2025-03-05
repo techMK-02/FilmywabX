@@ -91,6 +91,25 @@ body {
     text-decoration: underline;
 }
 
+.qr-code {
+    position: relative;
+}
+
+.download-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #007bff;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.download-icon:hover {
+    color: #0056b3;
+    transform: scale(1.2);
+}
+
 #watermark::after {
     content: "Made by Rahul";
     position: fixed;
