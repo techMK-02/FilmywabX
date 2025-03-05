@@ -9,22 +9,19 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <title>Techify Bots</title>
     <style>
-        /* Add styles for the loading spinner */
         .spinner {
-            border: 4px solid #f3f3f3; /* Light grey */
-            border-top: 4px solid #3498db; /* Blue */
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
             border-radius: 50%;
             width: 30px;
             height: 30px;
             animation: spin 1s linear infinite;
             margin: 0 auto;
         }
-
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        
         .loading-container {
             display: none;
             text-align: center;
@@ -34,17 +31,16 @@
 </head>
 <body>
     <div class="container">
-        <!-- QR Section -->
         <div class="qr-container">
             <div class="loading-container">
                 <div class="spinner"></div>
                 <p>Loading...</p>
             </div>
             <div class="qr-code"> 
-                <a href="https://envs.sh/FoD.jpg" download="upi-qr-code.jpg" id="upi-download-icon" class="download-icon">
+                <a href="assets/paytorahul.png" download="paytorahul.png" id="upi-download-icon" class="download-icon">
                     <i class="fas fa-download"></i>
                 </a>
-                <a href="https://envs.sh/PyH.jpg" download="paypal-qr-code.jpg" id="paypal-download-icon" class="download-icon" style="display: none;">
+                <a href="assets/paypal_qr.png" download="paypal-qr-code.png" id="paypal-download-icon" class="download-icon" style="display: none;">
                     <i class="fas fa-download"></i>
                 </a>
                 <img id="qr-image" src="assets/qr-code.png" alt="UPI QR Code">
@@ -67,11 +63,9 @@
                     ></lottie-player>
                 </div>
             </div>
-            <!-- Toggle between UPI and PayPal -->
             <a id="toggle-link" href="#" class="toggle-payment">Donate via PayPal? Click Here</a>
         </div>
     </div>
-
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const toggleLink = document.getElementById("toggle-link");
@@ -83,20 +77,17 @@
             const loadingContainer = document.querySelector(".loading-container");
             const upiDownloadIcon = document.getElementById("upi-download-icon");
             const paypalDownloadIcon = document.getElementById("paypal-download-icon");
-
             let isUpi = true;
-
             function switchToPayPal() {
-                loadingContainer.style.display = "block"; // Show loading spinner
-                qrImage.style.display = "none"; // Hide QR image
-
+                loadingContainer.style.display = "block";
+                qrImage.style.display = "none";
                 qrImage.onload = function() {
-                    loadingContainer.style.display = "none"; // Hide loading spinner
-                    qrImage.style.display = "block"; // Show QR image
+                    loadingContainer.style.display = "none";
+                    qrImage.style.display = "block";
                 };
 
-                qrImage.src = "assets/paypal_qr.png"; // Replace with your PayPal QR code image
-                paymentId.textContent = "TechifyBots"; // Replace with your PayPal ID
+                qrImage.src = "assets/paypal_qr.png";
+                paymentId.textContent = "TechifyBots";
                 paymentButton.textContent = "Open PayPal";
                 paymentButton.removeEventListener("click", copyUpiId);
                 paymentButton.addEventListener("click", openPayPalLink);
@@ -104,21 +95,18 @@
                 upiAnimation.style.display = "none";
                 qrText.textContent = "Scan with any QR scanning app or use the button";
                 isUpi = false;
-
                 upiDownloadIcon.style.display = "none";
                 paypalDownloadIcon.style.display = "block";
             }
 
             function switchToUpi() {
-                qrImage.style.display = "none"; // Hide QR image
-                loadingContainer.style.display = "none"; // Hide loading spinner
-
+                qrImage.style.display = "none";
+                loadingContainer.style.display = "none";
                 qrImage.onload = function() {
-                    qrImage.style.display = "block"; // Show QR image
+                    qrImage.style.display = "block";
                 };
-
-                qrImage.src = "assets/qr-code.png"; // Replace with your UPI QR code image
-                paymentId.textContent = "TechifyBots@UPI"; // Replace with your UPI ID
+                qrImage.src = "assets/qr-code.png";
+                paymentId.textContent = "TechifyBots@UPI";
                 paymentButton.textContent = "Copy";
                 paymentButton.removeEventListener("click", openPayPalLink);
                 paymentButton.addEventListener("click", copyUpiId);
@@ -126,11 +114,9 @@
                 upiAnimation.style.display = "block";
                 qrText.textContent = "Scan the QR code or use the UPI ID:";
                 isUpi = true;
-
                 upiDownloadIcon.style.display = "block";
                 paypalDownloadIcon.style.display = "none";
             }
-
             function copyUpiId() {
                 const tempInput = document.createElement("input");
                 tempInput.value = paymentId.textContent;
@@ -143,11 +129,9 @@
                     paymentButton.textContent = "Copy";
                 }, 2500);
             }
-
             function openPayPalLink() {
                 window.open("https://www.paypal.me/TechifyBots", "_blank");
             }
-
             toggleLink.addEventListener("click", function (e) {
                 e.preventDefault();
                 if (isUpi) {
@@ -156,9 +140,7 @@
                     switchToUpi();
                 }
             });
-
             paymentButton.addEventListener("click", copyUpiId);
-
             document.addEventListener("contextmenu", function (event) {
                 event.preventDefault();
             });
