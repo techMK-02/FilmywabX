@@ -64,11 +64,9 @@ This project was inspired by the need for a simple and user-friendly UPI Receipt
 <details><summary>Tap On Me For Credit</summary>
 
 
-💝 Credit Goes To [TechifyBots](https://github.com/TechifyBots)
+💕 [TechifyBots](https://github.com/TechifyBots)
 
-💘 Base Repo Credit [Inulute](https://github.com/inulute)
-
-💖 And Thank You So Much To All Who Help In This Journey.
+💘 [Inulute](https://github.com/inulute)
 </details>
 
 ### 💕 CONTACT DEVELOPER
