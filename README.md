@@ -11,6 +11,7 @@
 - Display a QR code for UPI payments with a dynamic toggle for PayPal.
 - Interactive UPI ID with a "Copy" button that changes to "Open PayPal" when switching to PayPal.
 - Responsive design for various screen sizes.
+- Includes a download button to easily save your QR code locally.
 - Easy to use and modify.
 - Free to use.
 - No ads.
