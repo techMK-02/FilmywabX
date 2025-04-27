@@ -1,4 +1,4 @@
-# 💰 [PayWeb](https://dypixx.vercel.app/pay)
+# 💰 [PayWeb](https://youtu.be/TrsXoI-JAW8)
 
 A clean and simple webpage to accept payments from both **Indian** and **international** users.
 
