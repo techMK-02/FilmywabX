@@ -16,7 +16,7 @@ function handleDownload() {
     showToast("Wait");
     setTimeout(() => {
         const link = document.createElement("a");
-        link.href = "assents/downloadQR.png";
+        link.href = "assets/downloadQR.png";
         link.download = "qr";
         document.body.appendChild(link);
         link.click();
