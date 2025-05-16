@@ -40,13 +40,10 @@ const paymentAddresses = {
     coffee: 'https://buymeacoffee.com/TechifyRahul' // Update Buy me coffe value
 };
 
-const ContactLink = 'https://instagram.com/TechifyRahul'; // Update Contact-Link value
-
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('paypal-address').textContent = paymentAddresses.paypal;
     document.getElementById('binance-address').textContent = paymentAddresses.binance;
     document.getElementById('coffee-address').textContent = paymentAddresses.coffee;
-    document.getElementById('contact-link').href = ContactLink;
 });
 function showToast(message) {
     const toast = document.getElementById("toast");
