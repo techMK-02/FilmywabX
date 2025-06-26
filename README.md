@@ -1,4 +1,4 @@
-# 💰 [PayWeb](https://youtu.be/TrsXoI-JAW8)
+# 💰 [PayWeb](https://wabxdonate.vercel.app/)
 
 A clean and simple webpage to accept payments from both **Indian** and **international** users.
 
@@ -76,6 +76,6 @@ To make it easier for friends, clients, and supporters to receive payments — n
 
 ## 🥳 CREDIT
 
-- [TechifyBots](https://github.com/TechifyBots)
+- [FilmyWabX](https://github.com/FilmyWabX)
 
-- [Dypixx](https://github.com/Dypixx)
+- [Mr Mohit](https://github.com/ligermohit07)
