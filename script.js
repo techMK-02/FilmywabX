@@ -27,7 +27,7 @@ function handleDownload() {
 function handlePay() {
     showToast("Opening UPI app(s)");
     setTimeout(() => {
-        window.location.href = "upi://pay?pa=TechifyRahul@UPI&pn=Rahul%20Dhankhar&mc=0000&mode=02&purpose=00"; // Replace upi id and name keep the format same
+        window.location.href = "upi://pay?pa=kanus-network@axl&pn=Kanhaiya&mc=0000&mode=02&purpose=00"; // Replace upi id and name keep the format same
     }, 3000);
 }
 
@@ -35,7 +35,7 @@ function handlePay() {
 
 
 const paymentAddresses = {
-    paypal: 'https://paypal.me/TechifyRahul', // Update Paypal value
+    paypal: 'https://buymeacoffee.com/WabX', // Update Paypal value
     binance: '486968757', // Update Binance Pay value
     coffee: 'https://buymeacoffee.com/WabX' // Update Buy me coffe value
 };
